@@ -93,11 +93,11 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(score, round){
+function finalScore(score, rounds){
   let homeScore = 0;
   let awayScore = 0;
 
-  for (let i=0; i < round; i++) {
+  for (let i=0; i < rounds; i++) {
     homeScore = homeScore + score();
     awayScore = awayScore = awayScore + score();
   }
@@ -160,9 +160,25 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(round, totalRounds) {
+  let allRounds = [];
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for (let  i = 0; i<totalRounds; i++){ 
+    let currentRound = round(inning);
+      homeScore = homeScore + currentRound.Home;
+      awayScore = awayScore + currentRound.Away;
+      allRounds.push (currentRound);
+  }
+  if (homeScore === awayScore) {
+    allRounds.push(`This game will require extra innings: Home ${homeScore} - Away ${awayScore}`);
+  } else {
+    allRounds.push(`Final Score: Home ${homeScore} - Away ${awayScore}`);
+  }
+  return allRounds
 }
+console.log(scoreboard(getInningScore,9));
 
 
 
