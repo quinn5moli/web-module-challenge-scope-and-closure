@@ -43,6 +43,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  Closures help organize code and determines the scope of objects/properties.
+
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,9 +66,16 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+a. Where is closure used in this code?
+
+The function in personalDice How can you tell? A function/object was being created.
+
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? 
+The value of 'Dan'. 
+What could change? The number of the roll.
+
 c. What is the lexical scope of `newRoll`? 
+It is in the functional scope of the function.
 
 
 ### Task 3 - Stretch Goals
