@@ -29,10 +29,20 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+  counter2 does not have the variable 'count' within its functional scope.
+
   2. Which of the two uses a closure? How can you tell?
+
+  counter 1 uses a closure. You can tell because the function 'counter' references a variable
+   ('count) from the surrounding lexical environment - in this case the function 'counterMaker.' 
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+  counter2 be better?
+  
+  counter1 code would be preferable if the variable and its function needed to be called at 
+  different times or only once. counter2 is preferable when you would like the declared variable
+  to be a global object so you would be able to reference the variable throughout the code as 
+  many times as you'd like.
 */
 
 // counter1 code
@@ -62,9 +72,11 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random()* 3);
 }
+
+console.log(inning());
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
